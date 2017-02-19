@@ -21,7 +21,7 @@ export const headerStyles = {
     backgroundColor: colors.darkerGray,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 60,
+    height: 50,
     paddingTop: 15,
     shadowColor: colors.black,
     shadowOffset: { width: 0, height: 2 },
@@ -38,33 +38,37 @@ export const cardStyles = {
   container: {
     borderWidth: 1,
     borderRadius: 3,
-    borderColor: '#ddd',
+    borderColor: colors.border,
     borderBottomWidth: 0,
     shadowColor: colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: 15
   }
 };
 
 export const cardSectionStyles = {
   container: {
-    borderBottomWidth: 1,
     padding: 5,
     justifyContent: 'flex-start',
     flexDirection: 'row',
     position: 'relative',
-    borderColor: '#ddd',
     backgroundColor: colors.white
   }
 };
 
-export const NEDetailStyles = {
+export const NEItemStyles = {
+  headerTitleContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
   headerTitle: {
-    fontSize: 18
+    fontSize: 15,
+    fontWeight: '600'
   },
   imageContainer: {
     height: 300,
@@ -78,7 +82,7 @@ export const buttonStyles = {
     alignSelf: 'stretch',
     flex: 1,
     flexDirection: 'row',
-    borderRadius: 5,
+    borderRadius: 3,
     borderWidth: 1,
     justifyContent: 'center',
     backgroundColor: colors.hotPink,

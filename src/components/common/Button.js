@@ -22,4 +22,4 @@ Button.propTypes = {
   loading: PropTypes.bool
 };
 
-export { Button }
+export { Button };

@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
-import NEDetail from '../../components/NEDetail';
+import NEItem from '../../components/NEItem';
 import { loadResource } from '../../actions';
 import { FETCH_TOP_RATED_SERIES } from '../../constants';
 
@@ -20,7 +20,7 @@ class NEListContainer extends Component {
   renderList() {
     const { results = [] } = this.props;
     return results.map(
-      movie => <NEDetail key={movie.id} movie={movie} onReadMore={this.handleReadMore}/>
+      movie => <NEItem key={movie.id} movie={movie} onReadMore={this.handleReadMore}/>
     );
   }
 

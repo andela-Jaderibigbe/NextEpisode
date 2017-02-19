@@ -2,23 +2,22 @@ import React, { Component } from 'react';
 import { Text, View, Image } from 'react-native';
 import { Card, CardSection, Button } from '../common';
 
-import { NEDetailStyles } from '../../styles';
+import { NEItemStyles } from '../../styles';
 
-class NEDetail extends Component {
+class NEItem extends Component {
 
   handleOnPress(id) {
-    this.props.onReadMore(id)
+    this.props.onReadMore(id);
   }
 
   render() {
-    const { movie } = this.props;
-    const { id, name, overview, imageUrl } = movie;
-    const { imageContainer } = NEDetailStyles;
+    const { movie: { id, name, overview, imageUrl } } = this.props;
+    const { imageContainer, headerTitle, headerTitleContainer } = NEItemStyles;
     return (
       <Card>
         <CardSection>
-          <View>
-            <Text>{name}</Text>
+          <View style={headerTitleContainer}>
+            <Text style={headerTitle}>{name}</Text>
           </View>
         </CardSection>
         <CardSection>
@@ -26,6 +25,9 @@ class NEDetail extends Component {
             style={imageContainer}
             source={{uri: imageUrl}}
           />
+        </CardSection>
+        <CardSection>
+          <Text numberOfLines={3}>{overview}</Text>
         </CardSection>
         <CardSection>
           <Button
@@ -37,4 +39,4 @@ class NEDetail extends Component {
   }
 }
 
-export default NEDetail;
+export default NEItem;
